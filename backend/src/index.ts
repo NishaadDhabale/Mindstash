@@ -6,7 +6,6 @@ import { JWT_PASSWORD } from './config';
 import { userMiddleware } from './middleware';
 import cors from 'cors';
 import { random } from './utils';
-
 const app = express();
 
 app.use(express.json());

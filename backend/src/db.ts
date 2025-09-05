@@ -1,8 +1,11 @@
 import mongoose, { model, Schema } from 'mongoose';
 
-mongoose.connect(
-  'mongodb+srv://nishaaddhabale:AA@cluster0.lazqubi.mongodb.net/brainly'
-);
+import dotenv from 'dotenv';
+dotenv.config();
+
+const mongoURI = process.env.MONGODB_URI;
+
+mongoose.connect(mongoURI);
 
 const UserSchema = new Schema({
   username: { type: String, unique: true },

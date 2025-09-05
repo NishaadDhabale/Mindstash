@@ -4,6 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
+        mindstash: {
+          sage: '#a6aea3',
+          brown: '#5a482e',
+          cream: '#fffee9',
+          stone: '#7f7b6f',
+        },
         gray: {
           50: 'rgba(255, 255, 255, 0.5)',
           100: '#eeeeef',
@@ -15,6 +21,9 @@ export default {
           500: '#9492db',
           600: '#7164c0',
         },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
