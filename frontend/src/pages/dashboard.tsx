@@ -13,7 +13,13 @@ import { useNavigate } from 'react-router-dom';
 export function Dashboard() {
   const [modalOpen, setModalOpen] = useState(false);
   const { contents, refresh } = useContent();
+  const [shared,setShared]= useState(false);
   const navigate = useNavigate();
+  
+  function checkShared(value:boolean){
+    setShared(value);
+  }
+
   useEffect(() => {
     let temptoken: string | null = '';
     const interval = setInterval(() => {
@@ -31,7 +37,10 @@ export function Dashboard() {
 
   return (
     <div>
-      <Sidebar />
+      <Sidebar
+      shared={shared}
+      onshared={checkShared}
+      />
       <div className="p-4 ml-72 min-h-screen bg-gray-100 border-2">
         <CreateContentModal
           open={modalOpen}
@@ -50,7 +59,7 @@ export function Dashboard() {
           ></Button>
           <Button
             onClick={async () => {
-
+              checkShared(true);
               const response = await axios.post(
                 `${BACKEND_URL}/api/v1/brain/share`,
                 {
@@ -61,6 +70,7 @@ export function Dashboard() {
                     Authorization: localStorage.getItem('token'),
                   },
                 }
+
               );
               //@ts-ignore
               const shareUrl = `http://localhost:5173/brain/${response.data.hash}`;
@@ -74,8 +84,9 @@ export function Dashboard() {
         </div>
 
         <div className="flex gap-4 flex-wrap">
+
           {contents.map(({ type, link, title }) => (
-            <Card type={type} link={link} title={title} />
+            <Card  title={title} type={type} link={link}/>
           ))}
         </div>
       </div>

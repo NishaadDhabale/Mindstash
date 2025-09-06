@@ -25,6 +25,10 @@ export function Signup() {
     alert('You have signed up!');
   }
 
+  function signinbutton(){
+    navigate('/signin')
+  }
+
   return (
     <div className="h-screen w-screen bg-gray-200 flex justify-center items-center">
       <div className="bg-white rounded-xl border min-w-48 p-8">
@@ -39,6 +43,10 @@ export function Signup() {
             text="Signup"
             fullWidth={true}
           />
+        </div>
+        <div className="flex justify-center mt-4">
+          Don't have an account?
+          <span onClick={()=>{signinbutton()}}className="px-2 text-blue-400 cursor-pointer hover:text-blue-600 transition-all duration-300"> Login</span>
         </div>
       </div>
     </div>

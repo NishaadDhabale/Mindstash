@@ -25,6 +25,10 @@ export function Signin() {
     localStorage.setItem('token', jwt);
     navigate('/dashboard');
   }
+
+  function signupbutton(){
+    navigate('/signup')
+  }
   return (
     <div className="h-screen w-screen bg-gray-200 flex justify-center items-center">
       <div className="bg-white rounded-xl border min-w-48 p-8">
@@ -38,6 +42,10 @@ export function Signin() {
             text="Signin"
             fullWidth={true}
           />
+        </div>
+        <div className="flex justify-center mt-4">
+          Don't have an account?
+          <span onClick={()=>{signupbutton()}}className="px-2 text-blue-400 cursor-pointer hover:text-blue-600 transition-all duration-300"> Signup</span>
         </div>
       </div>
     </div>

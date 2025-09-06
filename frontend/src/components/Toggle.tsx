@@ -3,6 +3,7 @@ import axios from 'axios';
 import { BACKEND_URL } from '../config';
 interface ToggleProps {
   text: string;
+  onclick:(value:boolean)=>void;
 }
 
 async function sharingdenied() {
@@ -19,11 +20,11 @@ async function sharingdenied() {
   );
   alert('Sharing has been disabled to renable sharing click on Share button');
 }
-export function ToggleSwitch({ text }: ToggleProps) {
+export function ToggleSwitch({ text,onclick }: ToggleProps) {
   const [checked, setChecked] = useState(false);
-
   const handleClick = () => {
     setChecked(true);
+    onclick(true);
     sharingdenied();
     setTimeout(() => {
       setChecked(false);
