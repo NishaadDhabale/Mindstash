@@ -11,7 +11,9 @@ export function Signin() {
   //@ts-ignore
   const passwordRef = useRef<HTMLInputElement>();
   const navigate = useNavigate();
-
+  function navland() {
+    navigate('/');
+  }
   async function signin() {
     const username = usernameRef.current?.value;
     console.log(usernameRef.current);
@@ -26,8 +28,8 @@ export function Signin() {
     navigate('/dashboard');
   }
 
-  function signupbutton(){
-    navigate('/signup')
+  function signupbutton() {
+    navigate('/signup');
   }
   return (
     <div className="h-screen w-screen bg-gray-200 flex justify-center items-center">
@@ -45,7 +47,24 @@ export function Signin() {
         </div>
         <div className="flex justify-center mt-4">
           Don't have an account?
-          <span onClick={()=>{signupbutton()}}className="px-2 text-blue-400 cursor-pointer hover:text-blue-600 transition-all duration-300"> Signup</span>
+          <span
+            onClick={() => {
+              signupbutton();
+            }}
+            className="px-2 text-blue-400 cursor-pointer hover:text-blue-600 transition-all duration-300"
+          >
+            {' '}
+            Signup
+          </span>
+        </div>
+        <div className="p-2 flex justify-center ">
+          <Button
+            onClick={navland}
+            loading={false}
+            variant="secondary"
+            text="Back"
+            fullWidth={false}
+          />
         </div>
       </div>
     </div>

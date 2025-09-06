@@ -6,7 +6,6 @@ import { BACKEND_URL } from '../config';
 import { useNavigate } from 'react-router-dom';
 
 export function Signup() {
-
   //@ts-ignore
   const usernameRef = useRef<HTMLInputElement>();
   //@ts-ignore
@@ -25,8 +24,11 @@ export function Signup() {
     alert('You have signed up!');
   }
 
-  function signinbutton(){
-    navigate('/signin')
+  function signinbutton() {
+    navigate('/signin');
+  }
+  function navland() {
+    navigate('/');
   }
 
   return (
@@ -35,7 +37,6 @@ export function Signup() {
         <Input reference={usernameRef} placeholder="Username" />
         <Input reference={passwordRef} placeholder="Password" />
         <div className="flex justify-center pt-4">
-
           <Button
             onClick={signup}
             loading={false}
@@ -46,7 +47,24 @@ export function Signup() {
         </div>
         <div className="flex justify-center mt-4">
           Don't have an account?
-          <span onClick={()=>{signinbutton()}}className="px-2 text-blue-400 cursor-pointer hover:text-blue-600 transition-all duration-300"> Login</span>
+          <span
+            onClick={() => {
+              signinbutton();
+            }}
+            className="px-2 text-blue-400 cursor-pointer hover:text-blue-600 transition-all duration-300"
+          >
+            {' '}
+            Login
+          </span>
+        </div>
+        <div className="p-2 flex justify-center ">
+          <Button
+            onClick={navland}
+            loading={false}
+            variant="secondary"
+            text="Back"
+            fullWidth={false}
+          />
         </div>
       </div>
     </div>
