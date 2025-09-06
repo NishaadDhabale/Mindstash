@@ -1,7 +1,8 @@
-
 import { MousePointer, FolderPlus, Share2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const HowItWorks = () => {
+  const navigate = useNavigate();
   const steps = [
     {
       icon: MousePointer,
@@ -62,7 +63,12 @@ const HowItWorks = () => {
         </div>
 
         <div className="text-center mt-16">
-          <button className="bg-mindstash-brown text-mindstash-cream px-8 py-4 rounded-lg hover:bg-mindstash-stone transition-all duration-300 text-lg font-medium">
+          <button
+            onClick={() => {
+              navigate('/signup');
+            }}
+            className="bg-mindstash-brown text-mindstash-cream px-8 py-4 rounded-lg hover:bg-mindstash-stone transition-all duration-300 text-lg font-medium"
+          >
             Start Your Journey Today
           </button>
         </div>

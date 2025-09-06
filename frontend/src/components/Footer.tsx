@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-mindstash-cream border-t border-mindstash-sage/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
               <div className="bg-mindstash-brown p-2 rounded-lg">
@@ -47,55 +47,12 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
-            <h3 className="font-semibold text-mindstash-brown mb-4">Product</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-mindstash-stone hover:text-mindstash-brown transition-colors"
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-mindstash-stone hover:text-mindstash-brown transition-colors"
-                >
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-mindstash-stone hover:text-mindstash-brown transition-colors"
-                >
-                  Browser Extension
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-mindstash-stone hover:text-mindstash-brown transition-colors"
-                >
-                  API
-                </a>
-              </li>
-            </ul>
-          </div>
+
 
           <div>
             <h3 className="font-semibold text-mindstash-brown mb-4">Support</h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-mindstash-stone hover:text-mindstash-brown transition-colors"
-                >
-                  Help Center
-                </a>
-              </li>
+
               <li>
                 <a
                   href="#"
@@ -112,19 +69,12 @@ const Footer = () => {
                   Community
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-mindstash-stone hover:text-mindstash-brown transition-colors"
-                >
-                  Status
-                </a>
-              </li>
+
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-mindstash-brown mb-4">Company</h3>
+            <h3 className="font-semibold text-mindstash-brown mb-4">Project</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -142,29 +92,15 @@ const Footer = () => {
                   Blog
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-mindstash-stone hover:text-mindstash-brown transition-colors"
-                >
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-mindstash-stone hover:text-mindstash-brown transition-colors"
-                >
-                  Terms
-                </a>
-              </li>
+
+
             </ul>
           </div>
         </div>
 
         <div className="border-t border-mindstash-sage/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-mindstash-stone text-sm">
-            © 2025 Mindstash. All rights reserved.
+             2025 Mindstash.
           </p>
           <p className="text-mindstash-stone text-sm mt-4 md:mt-0">
             Made with for bookmark lovers everywhere

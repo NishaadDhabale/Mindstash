@@ -1,8 +1,9 @@
 import React from 'react';
 import { Bookmark, Menu, X } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   return (
     <header className="bg-mindstash-cream/95 backdrop-blur-sm border-b border-mindstash-sage/20 sticky top-0 z-50">
@@ -39,10 +40,20 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex space-x-4">
-            <button className="text-mindstash-brown hover:text-mindstash-stone transition-colors">
-              Sign In
+            <button
+              onClick={() => {
+                navigate('/signin');
+              }}
+              className="text-mindstash-brown hover:text-mindstash-stone transition-colors"
+            >
+              Log In
             </button>
-            <button className="bg-mindstash-brown text-mindstash-cream px-6 py-2 rounded-lg hover:bg-mindstash-stone transition-colors">
+            <button
+              onClick={() => {
+                navigate('/signup');
+              }}
+              className="bg-mindstash-brown text-mindstash-cream px-6 py-2 rounded-lg hover:bg-mindstash-stone transition-colors"
+            >
               Get Started
             </button>
           </div>

@@ -30,12 +30,7 @@ const Features = () => {
       description:
         'Share individual bookmarks or entire collections with friends, colleagues, or make them public.',
     },
-    {
-      icon: Search,
-      title: 'Powerful Search',
-      description:
-        'Find any bookmark instantly with our advanced search that looks through titles, descriptions, and tags.',
-    },
+
     {
       icon: Youtube,
       title: 'YouTube Integration',
@@ -58,7 +53,7 @@ const Features = () => {
       icon: Shield,
       title: 'Privacy First',
       description:
-        'Your bookmarks are private by default. You control what to share and with whom.',
+        'Your bookmarks are private by default. You control what to share when to share.',
     },
   ];
 
