@@ -15,7 +15,7 @@ export function Dashboard() {
   const { contents, refresh } = useContent();
   const [shared,setShared]= useState(false);
   const navigate = useNavigate();
-  
+
   function checkShared(value:boolean){
     setShared(value);
   }
@@ -82,11 +82,15 @@ export function Dashboard() {
             startIcon={<ShareIcon />}
           ></Button>
         </div>
+        <div>
 
+
+
+        </div>
         <div className="flex gap-4 flex-wrap">
 
-          {contents.map(({ type, link, title }) => (
-            <Card  title={title} type={type} link={link}/>
+          {contents.map(({ _id,type, link, title,}) => (
+            <Card  title={title} type={type} link={link} contentid={_id} content={refresh} share={false}/>
           ))}
         </div>
       </div>

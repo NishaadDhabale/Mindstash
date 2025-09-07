@@ -81,8 +81,8 @@ export function Share() {
           {contents.length === 0 ? (
             <div className="font-semibold">Oops :( this link is not valid</div>
           ) : (
-            contents.map(({ type, link, title }) => (
-              <Card key={link} type={type} link={link} title={title} />
+            contents.map(({ type, link, title, }) => (
+              <Card key={link} type={type} link={link} title={title} share={true}/>
             ))
           )}
         </div>

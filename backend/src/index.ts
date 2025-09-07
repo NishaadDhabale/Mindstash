@@ -72,6 +72,7 @@ app.post('/api/v1/content', userMiddleware, async (req, res) => {
 
   res.json({
     message: 'Content added',
+
   });
 });
 
@@ -87,18 +88,27 @@ app.get('/api/v1/content', userMiddleware, async (req, res) => {
 });
 
 app.delete('/api/v1/content', userMiddleware, async (req, res) => {
-  const contentId = req.body.contentId;
+  try {
+    const contentId = req.body.contentId;
 
-  await ContentModel.deleteMany({
-    contentId,
-    // @ts-ignore
-    userId: req.userId,
-  });
+    await ContentModel.deleteMany({
+      _id:contentId,
+      // @ts-ignore
+      userId: req.userId,
+    });
 
-  res.json({
-    message: 'Deleted',
-  });
+    res.json({
+      message: 'Deleted',
+    });
+  } catch (error) {
+    console.error('Error deleting content:', error);
+    res.status(500).json({
+      message: 'Something went wrong while deleting content',
+      error: error instanceof Error ? error.message : error,
+    });
+  }
 });
+
 
 app.post('/api/v1/brain/share', userMiddleware, async (req, res) => {
   const share = req.body.share;
@@ -154,7 +164,6 @@ app.get('/api/v1/brain/:shareLink', async (req, res) => {
     userId: link.userId,
   });
 
-  console.log(link);
   const user = await UserModel.findOne({
     _id: link.userId,
   });

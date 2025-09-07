@@ -16,7 +16,6 @@ export function Signin() {
   }
   async function signin() {
     const username = usernameRef.current?.value;
-    console.log(usernameRef.current);
     const password = passwordRef.current?.value;
     const response = await axios.post(BACKEND_URL + '/api/v1/signin', {
       username,

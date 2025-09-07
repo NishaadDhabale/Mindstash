@@ -15,7 +15,6 @@ export function useContent() {
       .then((response) => {
         //@ts-ignore
         setContents(response.data.content);
-        console.log(contents);
       });
   }
 
