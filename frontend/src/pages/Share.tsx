@@ -12,7 +12,9 @@ import { YoutubeIcon } from '../icons/YoutubeIcon';
 //import axios from 'axios';
 //import { BACKEND_URL } from '../config';
 import { SidebarItem } from '../components/SidebarItem';
+import { useNavigate } from 'react-router-dom';
 export function Share() {
+  const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
   const { contents, refresh } = useShare();
 
@@ -24,10 +26,12 @@ export function Share() {
     <div>
       <div className="h-screen bg-white border-r w-72 fixed left-0 top-0 pl-6">
         <div className="flex text-2xl pt-8 items-center">
-          <div className="pr-2 text-purple-600">
+          <div onClick={()=>{
+            navigate("/");
+          }} className="pr-2 text-purple-600">
             <Logo />
           </div>
-          Thought
+          MindStash
         </div>
         <div className=" h-full ">
           <div className="pt-8 pl-4">
