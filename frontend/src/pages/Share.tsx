@@ -32,6 +32,11 @@ export function Share() {
         <div className=" h-full ">
           <div className="pt-8 pl-4">
             <SidebarItem text="Twitter" icon={<TwitterIcon />} />
+            <span className="text-sm text-gray-500 mr-4 p-4 flex">
+              twitter contents may load slower <br />
+              Due to API Limitations
+            </span>
+
             <SidebarItem text="Youtube" icon={<YoutubeIcon />} />
           </div>
         </div>
