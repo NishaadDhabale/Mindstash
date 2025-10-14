@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import express from 'express';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
@@ -72,7 +74,6 @@ app.post('/api/v1/content', userMiddleware, async (req, res) => {
 
   res.json({
     message: 'Content added',
-
   });
 });
 
@@ -92,7 +93,7 @@ app.delete('/api/v1/content', userMiddleware, async (req, res) => {
     const contentId = req.body.contentId;
 
     await ContentModel.deleteMany({
-      _id:contentId,
+      _id: contentId,
       // @ts-ignore
       userId: req.userId,
     });
@@ -108,7 +109,6 @@ app.delete('/api/v1/content', userMiddleware, async (req, res) => {
     });
   }
 });
-
 
 app.post('/api/v1/brain/share', userMiddleware, async (req, res) => {
   const share = req.body.share;
