@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 //import { Button } from '../components/Button';
 import { Card } from '../components/Card';
 import { CreateContentModal } from '../components/CreateContentModal';
-import { Sidebar } from '../components/Sidebar';
+
 import { useShare } from '../hooks/useShare';
 import { Logo } from '../icons/Logo';
 import { TwitterIcon } from '../icons/TwitterIcon';
@@ -81,8 +81,14 @@ export function Share() {
           {contents.length === 0 ? (
             <div className="font-semibold">Oops :( this link is not valid</div>
           ) : (
-            contents.map(({ type, link, title, }) => (
-              <Card key={link} type={type} link={link} title={title} share={true}/>
+            contents.map(({ type, link, title }) => (
+              <Card
+                key={link}
+                type={type}
+                link={link}
+                title={title}
+                share={true}
+              />
             ))
           )}
         </div>

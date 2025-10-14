@@ -1,6 +1,6 @@
 import { Signin } from './pages/Signin';
 import { Signup } from './pages/Signup';
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import { Dashboard } from './pages/dashboard';
 import { Share } from './pages/Share';
 import { Landing } from './pages/Landing';
