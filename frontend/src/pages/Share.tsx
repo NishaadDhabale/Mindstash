@@ -67,7 +67,7 @@ export function Share() {
                   }
                 );
                 //@ts-ignore
-                const shareUrl = `http://localhost:5173/share/${response.data.hash}`;
+                const shareUrl = `${FRONTENDURL}/share/${response.data.hash}`;
                 alert(shareUrl + 'has been copied to your clipboard');
                 navigator.clipboard.writeText(shareUrl);
               }}
