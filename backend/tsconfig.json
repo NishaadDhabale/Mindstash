@@ -1,5 +1,4 @@
 {
-  // in backend/tsconfig.json
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
@@ -9,7 +8,6 @@
     "forceConsistentCasingInFileNames": true,
     "strict": false,
     "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types"],
     "types": ["node"]
   },
   "include": ["src"]
