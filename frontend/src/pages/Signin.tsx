@@ -34,7 +34,7 @@ export function Signin() {
     <div className="h-screen w-screen bg-gray-200 flex justify-center items-center">
       <div className="bg-white rounded-xl border min-w-48 p-8">
         <Input reference={usernameRef} type="text" placeholder="Username" />
-        <Input reference={passwordRef} type="password "placeholder="Password" />
+        <Input reference={passwordRef} type="password" placeholder="Password" />
         <div className="flex justify-center pt-4">
           <Button
             onClick={signin}
