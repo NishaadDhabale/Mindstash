@@ -3,8 +3,8 @@ import { Bookmark, Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   return (
     <header className="bg-mindstash-cream/95 backdrop-blur-sm border-b border-mindstash-sage/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
