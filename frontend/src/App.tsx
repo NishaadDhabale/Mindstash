@@ -4,12 +4,13 @@ import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import { Dashboard } from './pages/dashboard';
 import { Share } from './pages/Share';
 import { Landing } from './pages/Landing';
+import Landing2 from './pages/Landing2';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Landing2 />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/dashboard" element={<Dashboard />} />
