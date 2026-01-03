@@ -1,14 +1,28 @@
+import React from 'react';
 import { Brain } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useScroll,motion, useTransform } from 'motion/react';
+
 
 export default function Landing2() {
-    const navigate = useNavigate();
-  return (
-    <div className=" overflow-x-hidden  bg-gray-100 font-sans">
-      <div className=" min-h-screen bg-gray-100 flex items-center justify-center p-4 md:p-10 font-sans">
+  const horizontalRef = React.useRef<HTMLDivElement>(null);
+  const { scrollYProgress: horizontalScroll } = useScroll({
+    target: horizontalRef,
+   
+  });
+  const xTransfrom = useTransform(horizontalScroll, [0, 1], ['0vw', '-200vw']);
+
+  return ( 
+    <div className="h-auto max-w-screen bg-gray-100 font-sans">
+
+
+
+      <div className=" min-h-screen overflow-hidden flex items-center justify-center p-4 md:p-10 font-sans">
         {/* Main Container */}
         <div className="max-w-8xl w-full bg-white  rounded-[40px] shadow-2xl overflow-hidden relative">
           {/* Navigation */}
+
+
+
           <nav className="flex items-center  justify-between px-8 py-6">
             <div className="flex items-center gap-2">
               <Brain className="text-emerald-700" size={28} />
@@ -35,14 +49,11 @@ export default function Landing2() {
               </a>
             </div>
 
-            <button
-               onClick={() => {
-                navigate('/signin');
-              }}
-            className="bg-black text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition">
+            <button className="bg-black text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition">
               Log In
             </button>
           </nav>
+
 
           {/* Hero Section */}
           <div className="flex md:justify-between flex-col md:flex-row px-8 md:px-16 py-12 items-center">
@@ -62,11 +73,7 @@ export default function Landing2() {
                 thoughts and lectures.
               </p>
 
-              <button
-                 onClick={() => {
-                navigate('/signup');
-              }}
-             className="bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-emerald-700 transition shadow-lg shadow-emerald-200 mb-12">
+              <button className="bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-emerald-700 transition shadow-lg shadow-emerald-200 mb-12">
                 Start Organizing
               </button>
 
@@ -114,9 +121,44 @@ export default function Landing2() {
                 </div>
               </div>
             </div>
+
+
+
           </div>
         </div>
       </div>
+
+      <div ref={horizontalRef} className="flex flex-col  items-center max-w-screen h-[300vh] text-gray-400  bg-white  rounded">
+
+          <div className="  flex max-w-screen overflow-hidden h-48 text-black bg-opacity-45 bg-gray-100 italic rounded-full p-6 mt-20 items-center text-2xl">
+            <p>"Fragments of thought are but wandering stars</p>
+            <p>-only when gathered do they reveal the map of your mind."</p>
+          </div>
+<div  mt-36 className="sticky top-36 overflow-hidden">
+          <div className="mt-20 overflow-hidden ">Features</div>
+
+          <div  className="overflow-hidden w-screen">
+            <div
+            
+              className="bg-red-100 w-full h-[460px] rounded-3xl mt-2 overflow-hidden  "
+            >
+              <motion.div style={{x:xTransfrom}} className="flex overflow-hidden">
+                <div className="flex bg-green-100 h-[460px] w-screen">hi</div>
+                <div className="bg-blue-100 h-[460px] w-screen">hi</div>
+                <div className="bg-purple-100 h-[460px] w-screen">hi </div>
+              </motion.div>
+            </div>
+          </div>
+          </div>
+       
+      </div>
+
+
+
+
+
+
+
     </div>
   );
 }
