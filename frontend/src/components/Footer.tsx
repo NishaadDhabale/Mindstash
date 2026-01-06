@@ -3,7 +3,7 @@ import { Bookmark, Twitter, Youtube, Github, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-mindstash-cream border-t border-mindstash-sage/20">
+    <footer className="w-screen bg-whit ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-6">

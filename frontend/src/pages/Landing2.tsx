@@ -1,24 +1,46 @@
 import React from 'react';
-import { Brain } from 'lucide-react';
+import { Share2,Youtube,Twitter,Brain } from 'lucide-react';
 import { useScroll,motion, useTransform } from 'motion/react';
+import Foooter from '../components/Foooter';
 
 
 export default function Landing2() {
   const horizontalRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress: horizontalScroll } = useScroll({
-    target: horizontalRef,
-   
+    target: horizontalRef, 
   });
-  const xTransfrom = useTransform(horizontalScroll, [0, 1], ['0vw', '-200vw']);
+  const xTransfrom = useTransform(horizontalScroll, [0.2, 1], [ '0%','-66.7%']);
 
+   const features = [
+
+    {
+      icon: Share2,
+      title: 'Easy Sharing',
+      description:
+        'Share individual bookmarks or entire collections with friends, colleagues, or make them public.',
+    },
+
+    {
+      icon: Youtube,
+      title: 'YouTube Integration',
+      description:
+        'Special support for YouTube videos with thumbnail previews, duration, and channel information.',
+    },
+    {
+      icon: Twitter,
+      title: 'Twitter Support',
+      description:
+        'Save tweets and threads with automatic formatting and user information preservation.',
+    },
+  ];
   return ( 
-    <div className="h-auto max-w-screen bg-gray-100 font-sans">
+    <div className="h-auto flex justify-center flex-col items-center w-full bg-gray-100 font-sans">
 
 
 
-      <div className=" min-h-screen overflow-hidden flex items-center justify-center p-4 md:p-10 font-sans">
+      <div className="w-5/6 min-h-screen flex items-center justify-center font-sans">
         {/* Main Container */}
-        <div className="max-w-8xl w-full bg-white  rounded-[40px] shadow-2xl overflow-hidden relative">
+        <div className="w-full bg-white rounded-[40px] shadow-2xl overflow-hidden relative">
           {/* Navigation */}
 
 
@@ -128,34 +150,52 @@ export default function Landing2() {
         </div>
       </div>
 
-      <div ref={horizontalRef} className="flex flex-col  items-center max-w-screen h-[300vh] text-gray-400  bg-white  rounded">
+      <div ref={horizontalRef} className="flex flex-col w-5/6 items-center relative h-[200vh] text-gray-400 p-10 bg-white  rounded-[40px] shadow-2xl">
 
-          <div className="  flex max-w-screen overflow-hidden h-48 text-black bg-opacity-45 bg-gray-100 italic rounded-full p-6 mt-20 items-center text-2xl">
+          <div className=" mb-32 md:rounded-full flex flex-col  overflow-hidden justify-center md:h-48  text-black bg-opacity-45 bg-gray-100 italic rounded-xl p-6 mt-20 items-center text-2xl">
             <p>"Fragments of thought are but wandering stars</p>
-            <p>-only when gathered do they reveal the map of your mind."</p>
+            <p>only when gathered do they reveal the map of your mind."</p>
           </div>
-<div  mt-36 className="sticky top-36 overflow-hidden">
-          <div className="mt-20 overflow-hidden ">Features</div>
+<div className="sticky w-full top-36 overflow-hidden">
+          <div className="mt-20 text-3xl text-zinc-800 font-bold pl-5 overflow-hidden ">Features</div>
 
-          <div  className="overflow-hidden w-screen">
+          <div  className=" flex ">
             <div
             
-              className="bg-red-100 w-full h-[460px] rounded-3xl mt-2 overflow-hidden  "
+              className=" w-full h-[460px] rounded-3xl mt-2 overflow-hidden  "
             >
-              <motion.div style={{x:xTransfrom}} className="flex overflow-hidden">
-                <div className="flex bg-green-100 h-[460px] w-screen">hi</div>
-                <div className="bg-blue-100 h-[460px] w-screen">hi</div>
-                <div className="bg-purple-100 h-[460px] w-screen">hi </div>
+              <motion.div style={{x:xTransfrom}} className="  flex w-[300%]">
+                
+          {features.map((feature, index) => (
+            <div className="flex p-2 justify-center items-center bg-gray-10 h-[460px] md:w-1/3">
+            <div
+              key={index}
+              className=" md:w-1/3 w-full p-6 overflow-hidden rounded-2xl border shadow-2xl shadow-neutral-600 h-[300px] border-mindstash-sage/20 hover:border-mindstash-sage hover:shadow-lg transition-all duration-300 bg-mindstash-cream/30"
+            >
+              <div className="w-12 h-12 bg-mindstash-brown/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-mindstash-brown group-hover:text-mindstash-cream transition-colors">
+                <feature.icon className="w-6 h-6 text-mindstash-brown group-hover:text-mindstash-cream" />
+              </div>
+              <h3 className="text-xl font-semibold text-mindstash-brown mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-mindstash-stone leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+            </div>
+          ))}
+       {/*
+                <div className="flex justify-center items-center bg-gray-100 h-[460px] w-1/3">hi1</div>
+                <div className="flex justify-center items-center bg-gray-100 h-[460px] w-1/3">hi2</div>
+                <div className="flex justify-center items-center bg-gray-100 h-[460px] w-1/3">hi3</div>*/}
+                
               </motion.div>
             </div>
           </div>
           </div>
        
       </div>
-
-
-
-
+      <Foooter/>
 
 
 
