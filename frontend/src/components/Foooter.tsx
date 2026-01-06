@@ -1,4 +1,4 @@
-import {  Twitter, Instagram, Youtube, Github, Map, Mail, Linkedin } from 'lucide-react';
+import {  Twitter, Instagram,  Github, Mail, Linkedin } from 'lucide-react';
 const Foooter = () => {
   return (
     <footer className="w-full border-t mt-20 border-gray-200 px-6 py-10 bg-white font-sans">
