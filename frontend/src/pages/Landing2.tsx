@@ -2,9 +2,10 @@ import React from 'react';
 import { Share2,Youtube,Twitter,Brain } from 'lucide-react';
 import { useScroll,motion, useTransform } from 'motion/react';
 import Foooter from '../components/Foooter';
-
+import {useNavigate} from 'react-router-dom'
 
 export default function Landing2() {
+  const navigate =useNavigate();
   const horizontalRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress: horizontalScroll } = useScroll({
     target: horizontalRef, 
@@ -71,7 +72,9 @@ export default function Landing2() {
               </a>
             </div>
 
-            <button className="bg-black text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition">
+            <button onClick={()=>{
+              navigate('/signin');
+            }}className="bg-black text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition">
               Log In
             </button>
           </nav>
@@ -95,7 +98,9 @@ export default function Landing2() {
                 thoughts and lectures.
               </p>
 
-              <button className="bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-emerald-700 transition shadow-lg shadow-emerald-200 mb-12">
+              <button onClick={()=>{
+                navigate('/signup')
+              }}className="bg-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-emerald-700 transition shadow-lg shadow-emerald-200 mb-12">
                 Start Organizing
               </button>
 
